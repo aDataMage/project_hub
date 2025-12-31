@@ -27,8 +27,22 @@ export function readData(): DataStore {
 /**
  * Write data to the JSON file
  */
+const mainSiteDataPath = path.join(process.cwd(), '../data/projects.json')
+
+/**
+ * Write data to the JSON file(s)
+ */
 export function writeData(data: DataStore): void {
+    // Write to local (Hub)
     fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2), 'utf-8')
+
+    // Write to Main Site (Sync)
+    try {
+        // Ensure directory exists if possible, or just try writing
+        fs.writeFileSync(mainSiteDataPath, JSON.stringify(data, null, 2), 'utf-8')
+    } catch (e) {
+        console.warn('Could not sync to Main Site data:', e)
+    }
 }
 
 /**
