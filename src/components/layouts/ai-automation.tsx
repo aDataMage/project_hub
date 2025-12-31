@@ -572,9 +572,9 @@ export function AiAutomationLayout({ project = sampleProject }: { project?: Proj
                                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                         {caseStudy.results.metrics.map((metric, i) => (
                                             <div key={i} className="p-5 bg-gradient-to-br from-card to-card/50 rounded-lg border border-border hover:border-primary/30 transition-colors">
-                                                <p className="text-muted-foreground text-sm mb-2">{metric.title}</p>
+                                                <p className="text-muted-foreground text-sm mb-2">{metric.label}</p>
                                                 <p className="text-lg font-semibold mb-2">{metric.value}</p>
-                                                <p className="text-muted-foreground text-sm">{metric.unit}</p>
+                                                {metric.improvement && <p className="text-muted-foreground text-sm">{metric.improvement}</p>}
                                             </div>
                                         ))}
                                     </div>

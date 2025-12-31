@@ -190,16 +190,18 @@ export function DataScienceLayout({ project }: { project: Project }) {
                             <p className="text-lg leading-relaxed">{caseStudy.results.impact}</p>
                         </div>
 
-                        <div>
-                            <h3 className="text-lg font-semibold mb-4">Key Learnings</h3>
-                            <ul className="grid md:grid-cols-2 gap-4">
-                                {caseStudy.results.learnings.map((learning, i) => (
-                                    <li key={i} className="bg-muted/20 p-4 rounded-lg text-sm text-muted-foreground border border-border/50">
-                                        • {learning}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        {caseStudy.results.learnings && caseStudy.results.learnings.length > 0 && (
+                            <div>
+                                <h3 className="text-lg font-semibold mb-4">Key Learnings</h3>
+                                <ul className="grid md:grid-cols-2 gap-4">
+                                    {caseStudy.results.learnings.map((learning, i) => (
+                                        <li key={i} className="bg-muted/20 p-4 rounded-lg text-sm text-muted-foreground border border-border/50">
+                                            • {learning}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
                     </section>
 
                 </div>
