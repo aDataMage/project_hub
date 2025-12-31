@@ -75,142 +75,7 @@ interface Project {
     }
 }
 
-// Sample project data
-const sampleProject: Project = {
-    title: "Real-Time Fraud Detection System",
-    description: "Production-ready ML system detecting fraudulent transactions with sub-100ms latency",
-    githubUrl: "https://github.com/example/fraud-detection",
-    demoUrl: "https://demo.example.com",
-    technologies: ["Python", "PyTorch", "FastAPI", "Redis", "PostgreSQL", "Docker", "Kubernetes", "MLflow"],
-    caseStudy: {
-        overview: {
-            summary: "Built an end-to-end fraud detection pipeline processing 10K+ transactions/sec with 94% precision, reducing false positives by 40% and saving $2M+ annually",
-            role: "Lead ML Engineer",
-            timeline: "4 months",
-            teamSize: 3,
-            businessContext: "E-commerce platform processing $50M+ monthly volume needed real-time fraud prevention without degrading user experience"
-        },
-        problem: {
-            statement: "Existing rule-based system had 30% false positive rate, blocking legitimate customers and causing $500K monthly revenue loss. Manual review team couldn't scale with transaction growth.",
-            goals: [
-                "Reduce false positives by 50%",
-                "Maintain <100ms latency",
-                "Process 10K+ TPS",
-                "Zero downtime deployment"
-            ],
-            constraints: [
-                "Cannot access certain PII fields",
-                "Must explain model decisions to compliance",
-                "Production deployment requires 99.9% uptime"
-            ],
-            stakeholders: ["Product team", "Risk/Compliance", "Customer Support", "Engineering"]
-        },
-        methodology: {
-            approach: "Hybrid ensemble combining gradient boosting (XGBoost) for accuracy and lightweight neural network for speed. Feature engineering focused on behavioral patterns and transaction velocity.",
-            processSteps: [
-                {
-                    title: "Data Analysis",
-                    description: "Analyzed 2 years of historical transactions (50M+ samples). Identified class imbalance (0.8% fraud rate) and temporal drift in fraud patterns."
-                },
-                {
-                    title: "Feature Engineering",
-                    description: "Created 120+ features: velocity metrics (transactions per hour/day), device fingerprinting, historical risk scores, and network analysis. Used SMOTE for balanced training."
-                },
-                {
-                    title: "Model Development",
-                    description: "Trained XGBoost ensemble (5 models) with custom loss function weighting false positives. Achieved 94% precision, 89% recall on validation set."
-                },
-                {
-                    title: "Production Pipeline",
-                    description: "Built FastAPI service with Redis caching for feature lookup, PostgreSQL for logging. Containerized with Docker, deployed on Kubernetes with auto-scaling."
-                }
-            ],
-            architecture: {
-                components: [
-                    {
-                        name: "Ingestion Layer",
-                        description: "Kafka consumers processing transaction streams with exactly-once semantics",
-                        tech: ["Apache Kafka", "Python"]
-                    },
-                    {
-                        name: "Feature Store",
-                        description: "Redis cluster caching user/device features with 15-minute TTL",
-                        tech: ["Redis Cluster", "PostgreSQL"]
-                    },
-                    {
-                        name: "Inference Service",
-                        description: "FastAPI microservice with model serving, request batching, and circuit breakers",
-                        tech: ["FastAPI", "PyTorch", "ONNX Runtime"]
-                    },
-                    {
-                        name: "Monitoring Stack",
-                        description: "Real-time dashboards tracking latency, accuracy, drift, and business metrics",
-                        tech: ["Prometheus", "Grafana", "MLflow"]
-                    }
-                ]
-            }
-        },
-        implementation: {
-            dataStrategy: "Streaming feature computation with batch retraining weekly. Used temporal validation (train on months 1-10, validate on 11-12) to prevent data leakage.",
-            modelDetails: "XGBoost ensemble (5 models, different seeds) + shallow LSTM for sequence patterns. ONNX conversion reduced inference time from 45ms to 12ms.",
-            pipeline: [
-                "Transaction arrives via Kafka",
-                "Feature enrichment from Redis (user history, device fingerprint)",
-                "Model inference (12ms avg)",
-                "Risk score returned to payment processor",
-                "Async logging to PostgreSQL for retraining"
-            ],
-            challenges: [
-                {
-                    issue: "Cold start problem for new users (no historical features)",
-                    solution: "Fallback to device/IP-based features + rule-based heuristics. Gradually build user profile over first 10 transactions."
-                },
-                {
-                    issue: "Model drift as fraudsters adapted tactics",
-                    solution: "Implemented weekly retraining pipeline with automated validation. Alert system detects >5% precision drop, triggers immediate review."
-                },
-                {
-                    issue: "Explainability for compliance team",
-                    solution: "Added SHAP value computation for flagged transactions. Created dashboard showing top contributing features per decision."
-                }
-            ]
-        },
-        results: {
-            metrics: [
-                { label: "False Positive Rate", value: "3.2%", improvement: "↓ 40%" },
-                { label: "Precision", value: "94%", improvement: "↑ 28%" },
-                { label: "Latency (p95)", value: "78ms", improvement: "Meeting SLA" },
-                { label: "Throughput", value: "12K TPS", improvement: "↑ 2.4x" }
-            ],
-            impact: "System now processes 10K+ transactions/second with 94% precision. Reduced manual review queue by 60%, allowing team to focus on complex cases.",
-            businessValue: "Prevented $2.1M in fraud losses annually while reducing false declines by 40%, recovering ~$600K in previously blocked legitimate transactions."
-        },
-        deployment: {
-            infrastructure: "Kubernetes cluster (3 nodes) on AWS EKS with horizontal pod autoscaling. Blue-green deployment strategy with automated rollback on SLA breach.",
-            monitoring: [
-                "Model performance metrics (precision, recall, F1) per hour",
-                "Infrastructure metrics (latency, throughput, error rate)",
-                "Feature drift detection comparing live vs training distribution",
-                "Business KPIs (fraud caught, revenue protected, customer friction)"
-            ],
-            scalability: "Designed for 50K TPS with linear cost scaling. Feature store sharding and model ensembles allow horizontal scaling."
-        },
-        learnings: {
-            technical: [
-                "ONNX conversion critical for production latency requirements",
-                "Feature versioning essential for debugging production issues",
-                "Automated validation prevents bad model deployments"
-            ],
-            business: [
-                "Explainability not optional - compliance needs transparency",
-                "False positive reduction had bigger business impact than fraud catch rate",
-                "Close collaboration with fraud analysts improved feature engineering"
-            ]
-        }
-    }
-}
-
-export function AiEngineeringLayout({ project = sampleProject }: { project?: Project }) {
+export function AiEngineeringLayout({ project }: { project: Project }) {
     const { caseStudy } = project
     const [activeSection, setActiveSection] = useState<string>("overview")
 
@@ -219,12 +84,12 @@ export function AiEngineeringLayout({ project = sampleProject }: { project?: Pro
             {/* Hero Section */}
             <div className="border-b border-border/40 bg-gradient-to-br from-blue-950/20 via-background to-purple-950/20">
                 <div className="container mx-auto px-4 py-12 max-w-7xl">
-                    <Link
-                        href="/"
+                    <a
+                        href="https://adatamage.com"
                         className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8"
                     >
-                        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
-                    </Link>
+                        <ArrowLeft className="mr-2 h-4 w-4" /> Back to Main Site
+                    </a>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="md:col-span-2">

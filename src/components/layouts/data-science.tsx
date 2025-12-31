@@ -1,11 +1,40 @@
 "use client"
 
-import { Project } from "@/lib/types"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { ArrowLeft, ExternalLink, Github, Database, Brain, BarChart, Target, Flag, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
+
+// Local type with data-science specific caseStudy structure
+interface Project {
+    title: string
+    technologies?: string[]
+    liveUrl?: string
+    githubUrl?: string
+    caseStudy?: {
+        overview: {
+            summary: string
+            role: string
+            timeline: string
+            teamSize?: number
+        }
+        problem: {
+            statement: string
+            businessContext: string
+            goals: string[]
+        }
+        methodology: {
+            approach: string
+            processSteps: { title: string; description: string }[]
+        }
+        results: {
+            metrics: { label: string; value: string }[]
+            impact: string
+            learnings?: string[]
+        }
+    }
+}
 
 export function DataScienceLayout({ project }: { project: Project }) {
     const { caseStudy } = project
@@ -15,9 +44,9 @@ export function DataScienceLayout({ project }: { project: Project }) {
         <div className="min-h-screen bg-background text-foreground pb-20">
             {/* Top Navigation */}
             <div className="container mx-auto px-4 py-6">
-                <Link href="/" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8">
-                    <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
-                </Link>
+                <a href="https://adatamage.com" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8">
+                    <ArrowLeft className="mr-2 h-4 w-4" /> Back to Main Site
+                </a>
             </div>
 
             {/* Hero Section */}

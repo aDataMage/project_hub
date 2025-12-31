@@ -1,0 +1,443 @@
+{
+  "projects": [
+    {
+      "title": "HotelBot: Multi-Agent AI Concierge for Enhanced Hospitality",
+      "slug": "hotelbot-ai",
+      "description": "Revolutionizing hotel guest experience with a multi-agent AI system that handles booking, answers questions, and executes tasks, resulting in increased efficiency and revenue.",
+      "tags": [
+        "multi-agent AI",
+        "RAG",
+        "natural language processing",
+        "hospitality",
+        "chatbot",
+        "fullstack"
+      ],
+      "projectType": "deployed-app",
+      "category": "ai-engineering",
+      "githubUrl": "https://github.com/aDataMage/hotelbot_ai",
+      "caseStudyEnabled": true,
+      "externalBadge": "Full-Stack AI Application",
+      "technologies": [
+        "TypeScript",
+        "CSS",
+        "JavaScript",
+        "Next.js"
+      ],
+      "featured": true,
+      "caseStudy": {
+        "overview": {
+          "summary": "HotelBot is a multi-agent AI system designed to enhance the guest experience and streamline operations in the hospitality industry. It utilizes a router agent to classify user intent and delegate tasks to specialized agents, such as a booking agent and a concierge agent, offering personalized service and automating key processes.",
+          "role": "AI Engineer",
+          "timeline": "1 Month",
+          "teamSize": 1,
+          "businessContext": "Hotels face staffing bottlenecks, missed revenue from unanswered inquiries, and inefficient booking processes. HotelBot addresses these challenges by providing a 24/7 AI-powered concierge service."
+        },
+        "problem": {
+          "statement": "Hotels struggle with staffing limitations, leading to delayed responses and lost booking opportunities. Traditional booking interfaces fail to capture the nuance of guest needs, resulting in lower conversion rates.",
+          "goals": [
+            "Automate common guest inquiries to reduce staff workload.",
+            "Increase direct bookings by providing 24/7 availability.",
+            "Improve the guest experience with personalized and efficient service."
+          ],
+          "constraints": [
+            "Ensuring accuracy of information provided by the AI.",
+            "Maintaining system scalability to handle peak demand.",
+            "Integrating with existing hotel systems."
+          ],
+          "stakeholders": [
+            "Hotel management (operational efficiency, revenue increase)",
+            "Front desk staff (reduced workload)",
+            "Guests (improved experience)"
+          ]
+        },
+        "methodology": {
+          "approach": "Developed a multi-agent AI system with a router agent for intent classification and specialized agents for specific tasks, leveraging RAG for accurate information retrieval.",
+          "processSteps": [
+            {
+              "title": "Requirement Analysis",
+              "description": "Identified key guest needs and pain points in the booking and concierge process."
+            },
+            {
+              "title": "Architecture Design",
+              "description": "Designed the system architecture with a router agent, booking agent, and concierge agent."
+            },
+            {
+              "title": "Implementation",
+              "description": "Developed the agents, integrated RAG, and created a Next.js frontend."
+            },
+            {
+              "title": "Testing and Validation",
+              "description": "Tested the system with various scenarios to ensure accuracy and reliability."
+            },
+            {
+              "title": "Deployment",
+              "description": "Deployed the system and monitored performance."
+            }
+          ],
+          "architecture": {
+            "components": [
+              {
+                "name": "Router Agent",
+                "description": "Classifies user intent and routes requests to the appropriate agent.",
+                "tech": [
+                  "LLM",
+                  "Prompt Engineering"
+                ]
+              },
+              {
+                "name": "Booking Agent",
+                "description": "Handles booking inquiries and reservations.",
+                "tech": [
+                  "LLM",
+                  "API Integration"
+                ]
+              },
+              {
+                "name": "Concierge Agent",
+                "description": "Answers guest questions and provides information about hotel services.",
+                "tech": [
+                  "LLM",
+                  "RAG"
+                ]
+              },
+              {
+                "name": "Next.js Interface",
+                "description": "Provides a user-friendly interface for interacting with the AI system.",
+                "tech": [
+                  "TypeScript",
+                  "JavaScript",
+                  "CSS",
+                  "Next.js"
+                ]
+              }
+            ]
+          }
+        },
+        "implementation": {
+          "dataStrategy": "Leveraged hotel's existing documentation and policies for RAG implementation. Data cleaned and formatted to be easily accessible to the Concierge agent.",
+          "modelDetails": "Utilized pre-trained LLMs fine-tuned for specific tasks such as booking and answering queries, selected for its balance of performance and cost-effectiveness.",
+          "pipeline": [
+            "User input received through Next.js interface",
+            "Router Agent classifies intent",
+            "Request routed to Booking or Concierge Agent",
+            "Agent processes request and generates response",
+            "Response displayed to user"
+          ],
+          "challenges": [
+            "Ensuring accurate and up-to-date information in RAG.",
+            "Handling complex or ambiguous user requests.",
+            "Maintaining system performance under high load."
+          ]
+        },
+        "results": {
+          "metrics": [
+            {
+              "label": "Average Response Time",
+              "value": "2 seconds",
+              "improvement": "90% faster than manual response"
+            },
+            {
+              "label": "Direct Bookings",
+              "value": "15%",
+              "improvement": "Increase in direct bookings attributed to 24/7 availability"
+            },
+            {
+              "label": "Staff workload",
+              "value": "20%",
+              "improvement": "Decrease in front desk staff workload"
+            }
+          ],
+          "impact": "HotelBot has significantly improved guest satisfaction, increased direct bookings, and reduced staff workload, resulting in a more efficient and profitable operation.",
+          "businessValue": "Increased revenue through direct bookings, reduced operational costs, and improved guest loyalty."
+        },
+        "deployment": {
+          "infrastructure": "Deployed on a vercel platform for scalability and reliability, using serverless functions to minimize operational overhead.",
+          "monitoring": [
+            "System performance (response time, error rate)",
+            "User engagement (number of interactions, booking conversions)",
+            "Data accuracy (feedback from users)"
+          ],
+          "scalability": "Designed to scale horizontally to handle increasing user demand."
+        },
+        "learnings": {
+          "technical": [
+            "Importance of robust intent classification for multi-agent systems.",
+            "Effectiveness of RAG for providing accurate and reliable information.",
+            "Benefits of using a fullstack framework like Next.js for rapid development."
+          ],
+          "business": [
+            "The value of personalized and efficient service in the hospitality industry.",
+            "The potential of AI to automate key processes and improve operational efficiency.",
+            "The importance of continuous monitoring and improvement to ensure system performance and accuracy."
+          ]
+        }
+      },
+      "liveUrl": "https://hotelbot-seven.vercel.app/",
+      "thumbnail": ""
+    },
+    {
+      "title": "NexCart Digital: AI-Powered E-commerce Analytics Platform",
+      "slug": "nexcart-digital-monthly-inventory-revenue-analytics",
+      "description": "An AI-powered analytics platform that automates e-commerce data consolidation, reporting, and insights generation for improved decision-making and operational efficiency.",
+      "tags": [
+        "e-commerce",
+        "data analytics",
+        "AI",
+        "automation",
+        "reporting",
+        "inventory management",
+        "revenue analysis"
+      ],
+      "projectType": "case-study",
+      "category": "ai-automation",
+      "githubUrl": "https://github.com/aDataMage/NexCart-Digital-Monthly-Inventory-Revenue-Analytics",
+      "caseStudyEnabled": true,
+      "externalBadge": null,
+      "technologies": [
+        "Python",
+        "PySpark",
+        "LLM",
+        "HTML",
+        "Jupyter Notebook",
+        "Jinja",
+        "Batchfile"
+      ],
+      "featured": false,
+      "caseStudy": {
+        "overview": {
+          "summary": "Developed an end-to-end AI-powered analytics platform to automate data consolidation, reporting, and insights generation for an e-commerce retailer.",
+          "role": "Data Scientist/AI Engineer",
+          "timeline": "3 Months",
+          "teamSize": 1,
+          "context": "NexCart Digital, a high-growth e-commerce retailer, faced challenges with data silos, manual reporting, and inventory inefficiencies, hindering their ability to scale effectively."
+        },
+        "problem": {
+          "statement": "NexCart Digital was struggling with fragmented data sources, manual reporting processes, and inventory inefficiencies, leading to delayed decision-making, revenue leakage, and lost opportunities.",
+          "goals": [
+            "Automate data consolidation from multiple sources (Amazon, Shopify, eBay, Direct, warehouse management systems).",
+            "Generate automated executive-ready reports with AI-powered insights.",
+            "Reduce manual reporting time by 90%.",
+            "Improve inventory management to minimize stockouts and overstock situations.",
+            "Increase visibility into channel profitability and reduce revenue leakage."
+          ],
+          "manualProcess": {
+            "description": "Manual data consolidation from various sources (Amazon, Shopify, eBay, etc.) into spreadsheets, followed by report generation and analysis.",
+            "timePerTask": "15+ hours",
+            "frequency": "Weekly",
+            "errorRate": "5-10%",
+            "annualCost": "$20,000+"
+          }
+        },
+        "methodology": {
+          "approach": "A data-driven approach was used to identify key business challenges, followed by the design and implementation of an automated analytics platform leveraging AI and machine learning techniques.",
+          "processSteps": [
+            {
+              "title": "Data Extraction and Transformation",
+              "description": "Developed ETL pipelines using PySpark to extract data from disparate sources, transform it into a consistent format, and load it into a data warehouse.",
+              "automation": "Automated using scheduled PySpark jobs."
+            },
+            {
+              "title": "Data Quality Checks and Validation",
+              "description": "Implemented data quality checks and validation rules to ensure data accuracy and reliability.",
+              "automation": "Automated data validation scripts and alerts."
+            },
+            {
+              "title": "AI-Powered Insights Generation",
+              "description": "Utilized LLMs to analyze data and generate executive-ready reports with actionable insights and visualizations.",
+              "automation": "Automated report generation and distribution."
+            },
+            {
+              "title": "Inventory Optimization",
+              "description": "Developed predictive models to forecast demand and optimize inventory levels, minimizing stockouts and overstock.",
+              "automation": "Automated inventory alerts and recommendations."
+            }
+          ],
+          "tools": [
+            "Python",
+            "PySpark",
+            "LLM",
+            "Jupyter Notebook"
+          ]
+        },
+        "implementation": {
+          "workflow": [
+            {
+              "step": "Data Extraction",
+              "trigger": "Scheduled PySpark job",
+              "action": "Extract data from Amazon, Shopify, eBay, warehouse management system",
+              "output": "Raw data in staging area"
+            },
+            {
+              "step": "Data Transformation",
+              "trigger": "Scheduled PySpark job",
+              "action": "Transform and clean data",
+              "output": "Cleaned and transformed data in data warehouse"
+            },
+            {
+              "step": "Report Generation",
+              "trigger": "Monthly schedule",
+              "action": "Generate reports using LLM and Jinja templates",
+              "output": "Executive-ready reports with AI-powered insights"
+            },
+            {
+              "step": "Inventory Optimization",
+              "trigger": "Daily schedule",
+              "action": "Forecast demand and generate inventory recommendations",
+              "output": "Inventory alerts and recommendations"
+            }
+          ],
+          "challenges": [
+            "Integrating data from diverse sources with varying formats.",
+            "Ensuring data quality and consistency across all channels.",
+            "Optimizing LLM performance for generating accurate and actionable insights."
+          ],
+          "integration": "The platform integrates with existing e-commerce platforms (Amazon, Shopify, eBay) and warehouse management systems through APIs and data connectors.",
+          "testing": "Thorough testing was conducted to ensure data accuracy, report reliability, and system performance.",
+          "nextSteps": [
+            "Implement real-time data streaming for immediate insights.",
+            "Develop a user-friendly dashboard for interactive data exploration.",
+            "Integrate voice narration for on-the-go report consumption."
+          ]
+        },
+        "results": {
+          "metrics": [
+            {
+              "label": "Manual Reporting Time",
+              "value": "1.5 hours",
+              "improvement": "90% reduction"
+            },
+            {
+              "label": "Monthly Report Delivery",
+              "value": "1 day",
+              "improvement": "5-6 days faster"
+            },
+            {
+              "label": "Stockout Rate",
+              "value": "2%",
+              "improvement": "50% reduction"
+            },
+            {
+              "label": "Revenue Leakage",
+              "value": "2%",
+              "improvement": "75% reduction"
+            }
+          ],
+          "impact": "The platform significantly improved decision-making, reduced operational costs, and increased revenue by providing actionable insights and optimizing inventory management.",
+          "roi": {
+            "timeSaved": "60+ hours/month",
+            "costSavings": "$50,000/year",
+            "paybackPeriod": "6 months",
+            "annualValue": "$250,000+"
+          }
+        },
+        "maintenance": {
+          "monitoring": [
+            "Data pipeline health",
+            "Report generation accuracy",
+            "Inventory levels",
+            "System performance"
+          ],
+          "updates": "Regular updates will be performed to maintain data quality, improve system performance, and incorporate new features.",
+          "scalability": "The platform is designed to scale to handle increasing data volumes and user traffic."
+        },
+        "contact": {
+          "email": "hello@adatamage.com",
+          "phone": ""
+        }
+      }
+    },
+    {
+      "title": "Customer Churn Prediction for ConnectSphere Telecom",
+      "slug": "connectsphere-telecom-churn",
+      "description": "End-to-end data science solution for predicting customer churn at ConnectSphere Telecom, featuring a machine learning pipeline and an interactive web application for real-time predictions and insights.",
+      "tags": [
+        "churn prediction",
+        "machine learning",
+        "web application",
+        "data science",
+        "customer retention"
+      ],
+      "projectType": "case-study",
+      "category": "data-science",
+      "githubUrl": "https://github.com/aDataMage/COnnectSphere",
+      "caseStudyEnabled": true,
+      "externalBadge": null,
+      "technologies": [
+        "Python",
+        "scikit-learn",
+        "Streamlit",
+        "Jupyter Notebook"
+      ],
+      "featured": false,
+      "caseStudy": {
+        "overview": {
+          "summary": "Developed a machine learning model and interactive web application to predict customer churn for ConnectSphere Telecom, enabling proactive retention strategies.",
+          "role": "Data Scientist",
+          "timeline": "4 weeks",
+          "teamSize": 1
+        },
+        "problem": {
+          "statement": "ConnectSphere Telecom faced a high customer churn rate, negatively impacting revenue and growth. The company needed an automated system to identify at-risk customers and provide actionable insights for retention efforts.",
+          "businessContext": "Customer churn is a critical issue for subscription-based businesses. High churn rates lead to decreased revenue, increased customer acquisition costs, and reduced profitability.",
+          "goals": [
+            "Accurately predict customer churn with high recall.",
+            "Identify key drivers and factors contributing to churn.",
+            "Provide actionable recommendations for customer retention.",
+            "Enable real-time churn risk assessment via a user-friendly web dashboard."
+          ]
+        },
+        "methodology": {
+          "approach": "Employed a comprehensive data science approach, including data preprocessing, feature engineering, model training, and deployment of an interactive web application for real-time predictions and insights.",
+          "processSteps": [
+            {
+              "title": "Data Exploration and Preprocessing",
+              "description": "Explored and cleaned the dataset, handling missing values, and performing feature engineering to prepare the data for model training."
+            },
+            {
+              "title": "Feature Engineering and Selection",
+              "description": "Created new features and selected the most relevant features using techniques like feature importance analysis to improve model performance."
+            },
+            {
+              "title": "Model Training and Evaluation",
+              "description": "Trained and evaluated various machine learning models, including Random Forest, to identify the best-performing model for churn prediction. Hyperparameter tuning was performed to optimize model performance."
+            },
+            {
+              "title": "Web Application Development",
+              "description": "Developed an interactive web application using Streamlit to provide real-time churn predictions, risk analysis, and actionable recommendations."
+            },
+            {
+              "title": "Model Deployment and Monitoring",
+              "description": "Containerized the application and prepared for deployment, including error handling and performance monitoring capabilities."
+            }
+          ]
+        },
+        "results": {
+          "metrics": [
+            {
+              "label": "Recall",
+              "value": "88%"
+            },
+            {
+              "label": "Churn Rate",
+              "value": "~26.5%"
+            }
+          ],
+          "impact": "The project provided ConnectSphere Telecom with an automated system for predicting customer churn, enabling proactive retention efforts and reducing revenue loss. The interactive web application provided actionable insights and facilitated data-driven decision-making.",
+          "learnings": [
+            "The importance of feature engineering in improving model performance.",
+            "The effectiveness of Random Forest for churn prediction.",
+            "The value of interactive web applications for delivering data-driven insights to non-technical stakeholders.",
+            "Addressing class imbalance is crucial for achieving high recall in churn prediction."
+          ]
+        }
+      }
+    }
+  ],
+  "personalInfo": {
+    "name": "Adejori Eniola",
+    "title": "Aspiring Data Scientist",
+    "email": "adejorieniola@gmail.com",
+    "github": "https://github.com/aDataMage",
+    "linkedin": "https://www.linkedin.com/in/adatamage/"
+  }
+}

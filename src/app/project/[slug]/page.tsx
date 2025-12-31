@@ -30,13 +30,13 @@ export default async function ProjectPage({
             return <DataScienceLayout project={project} />
 
         case 'data-visualization':
-            return <DataVizLayout />
+            return <DataVizLayout project={project} />
 
         case 'ai-automation':
-            return <AiAutomationLayout />
+            return <AiAutomationLayout project={project} />
 
         case 'ai-engineering':
-            return <AiEngineeringLayout />
+            return <AiEngineeringLayout project={project} />
 
         default:
             // Fallback Layout (can be a generic one, using Data Science for now as a safe default)

@@ -15,9 +15,17 @@ export default function Home() {
 
         {/* Header */}
         <header className="mb-16 text-center space-y-4">
-          <Badge variant="outline" className="mb-4">
-            Projects Hub
-          </Badge>
+          <a
+            href="https://adatamage.com"
+            className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-4 text-sm"
+          >
+            ← Back to Main Site
+          </a>
+          <div>
+            <Badge variant="outline" className="mb-4">
+              Projects Hub
+            </Badge>
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             {PERSONAL_INFO.name}'s <span className="text-primary">Work</span>
           </h1>

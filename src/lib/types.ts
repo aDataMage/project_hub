@@ -36,57 +36,7 @@ export interface Project {
     featured?: boolean
     order?: number
 
-    // Deep Case Study Content (PACE Framework)
-    caseStudy?: {
-        overview: {
-            summary: string
-            role: string
-            timeline: string
-            teamSize?: number
-            businessContext?: string
-        }
-        problem: {
-            statement: string
-            businessContext: string // Kept for backward compatibility if needed, or unify
-            goals: string[]
-            constraints?: string[]
-            stakeholders?: string[]
-        }
-        methodology: {
-            approach: string
-            processSteps: { title: string; description: string }[]
-            architectureImage?: string // URL to architecture diagram
-            architecture?: {
-                components: Array<{
-                    name: string
-                    description: string
-                    tech: string[]
-                }>
-            }
-        }
-        implementation?: {
-            dataStrategy?: string
-            modelDetails?: string
-            pipeline?: string[]
-            challenges?: Array<{
-                issue: string
-                solution: string
-            }>
-        }
-        results: {
-            metrics: { label: string; value: string; trend?: 'up' | 'down'; improvement?: string }[]
-            impact: string
-            businessValue?: string
-            learnings?: string[]
-        }
-        deployment?: {
-            infrastructure: string
-            monitoring: string[]
-            scalability?: string
-        }
-        learnings?: {
-            technical: string[]
-            business: string[]
-        }
-    }
+    // Deep Case Study Content - flexible to support all category templates
+    // Each category (data-science, data-viz, ai-automation, ai-engineering) has unique fields
+    caseStudy?: any
 }
