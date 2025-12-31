@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/connectsphere-churn-prediction/:match*",
+            "destination": "https://connectsphere.streamlit.app/:match*"
+        }
+    ]
+}
